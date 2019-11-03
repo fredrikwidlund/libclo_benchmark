@@ -28,10 +28,10 @@ void log_libclo(size_t n, char *message, int code, char *file, char *func, int l
     {
       e = clo_encode((clo[]) {
           clo_object({"message", clo_string(message)},
-                     {"code", clo_integer(code)},
+                     {"code", clo_number(code)},
                      {"file", clo_string(file)},
                      {"func", clo_string(func)},
-                     {"line", clo_integer(line)}
+                     {"line", clo_number(line)}
                      )}, buffer, sizeof buffer);
       if (e == -1)
         err(1, "clo_encode");
